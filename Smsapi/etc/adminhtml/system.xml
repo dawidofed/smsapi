@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Studio IT
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the federowicz.net license that is
+ * available through the world-wide-web at this URL:
+ * http://www.federowicz.net/M2LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    StudioIt
+ * @package     StudioIt_Smsapi
+ * @copyright   Copyright (c) Studio IT Dawid Federowicz (http://www.federowicz.net/)
+ * @license     http://www.federowicz.net/M2LICENSE.txt
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="studioit" translate="label" sortOrder="1000000">
+            <label>Studio IT</label>
+        </tab>
+        <section id="studioit" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Studio IT - module settings</label>
+            <tab>studioit</tab>
+            <resource>Studioit_Smsapi::smsapi_configuration</resource>
+            <group id="smsapi" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>SMSAPI - SMS settings</label>
+                <field id="smsApiEnabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Turn ON/OFF SMSAPI</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="apiToken" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Token SMS API</label>
+                </field>
+                <field id="statusComplete" translate="label" type="select" sortOrder="22" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable for COMPLETE status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="statusCompleteText" translate="label" type="textarea" sortOrder="23" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Text for COMPLETE status</label>
+                </field>
+                <field id="statusNew" translate="label" type="select" sortOrder="33" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable for NEW status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="statusNewText" translate="label" type="textarea" sortOrder="34" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Text for NEW status</label>
+                </field>
+                <field id="statusHolded" translate="label" type="select" sortOrder="44" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable for HOLDED status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="statusHoldedText" translate="label" type="textarea" sortOrder="45" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Text for HOLDED status</label>
+                </field>
+                <field id="statusCanceled" translate="label" type="select" sortOrder="55" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable for CANCELED status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="statusCanceledText" translate="label" type="textarea" sortOrder="56" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Text for CANCELED status</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
