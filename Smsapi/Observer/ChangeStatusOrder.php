@@ -58,6 +58,7 @@ class ChangeStatusOrder extends AbstractDataAssignObserver
         if (false === $config->isEnabled()) {
             $logWrite->write('SMSAPI disabled.', $logWrite::INFO);
             $logWrite->write('=== Finish SMSAPI ===', $logWrite::INFO);
+
             return false;
         }
 
@@ -70,6 +71,7 @@ class ChangeStatusOrder extends AbstractDataAssignObserver
             if (false === $smsValidate->validate($phoneNumber)) {
                 $logWrite->write('Wrong phone number, or message is empty.', $logWrite::ERROR);
                 $logWrite->write('=== Finish SMSAPI ===', $logWrite::INFO);
+
                 return false;
             }
 
@@ -77,6 +79,7 @@ class ChangeStatusOrder extends AbstractDataAssignObserver
             if (false === $config->getConfigStatus($order->getState())) {
                 $logWrite->write('SMSAPI disabled for status ' . $order->getState(), $logWrite::INFO);
                 $logWrite->write('=== Finish SMSAPI ===', $logWrite::INFO);
+
                 return false;
             }
 
@@ -84,6 +87,7 @@ class ChangeStatusOrder extends AbstractDataAssignObserver
             if (false === $config->getText($order->getState())) {
                 $logWrite->write('Text for status ' . $order->getState() . ' is empty!', $logWrite::ERROR);
                 $logWrite->write('=== Finish SMSAPI ===', $logWrite::INFO);
+
                 return false;
             }
 

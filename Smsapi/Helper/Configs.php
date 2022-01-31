@@ -55,8 +55,10 @@ class Configs
     {
         if (null !== $this->_scopeConfig->getValue(self::PRE . self::smsApiEnabled, ScopeInterface::SCOPE_DEFAULT)
             && $this->_scopeConfig->getValue(self::PRE . self::smsApiEnabled, ScopeInterface::SCOPE_DEFAULT) !== '') {
+
             return true;
         }
+
         return false;
     }
 
@@ -67,8 +69,10 @@ class Configs
     {
         if (null !== $this->_scopeConfig->getValue(self::PRE . self::smsApiToken, ScopeInterface::SCOPE_DEFAULT)
             && $this->_scopeConfig->getValue(self::PRE . self::smsApiToken, ScopeInterface::SCOPE_DEFAULT) !== '') {
+
             return true;
         }
+
         return false;
     }
 
@@ -81,8 +85,10 @@ class Configs
         if (null !== $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status), ScopeInterface::SCOPE_DEFAULT)
             && $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status), ScopeInterface::SCOPE_DEFAULT) !== ''
             && $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status), ScopeInterface::SCOPE_DEFAULT) !== '0') {
+
             return $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status), ScopeInterface::SCOPE_DEFAULT);
         }
+
         return false;
     }
 
@@ -94,8 +100,10 @@ class Configs
     {
         if (null !== $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status) . 'Text', ScopeInterface::SCOPE_DEFAULT)
             && $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status) . 'Text', ScopeInterface::SCOPE_DEFAULT) !== '') {
+
             return $this->_scopeConfig->getValue(self::PRE . 'status' . ucfirst($status) . 'Text', ScopeInterface::SCOPE_DEFAULT);
         }
+
         return false;
     }
 }

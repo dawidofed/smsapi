@@ -35,7 +35,8 @@
             <group id="smsapi" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
                    showInStore="0">
                 <label>SMSAPI - SMS settings</label>
-                <field id="smsApiEnabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="smsApiEnabled" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
                     <label>Turn ON/OFF SMSAPI</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
@@ -43,32 +44,40 @@
                        showInStore="1">
                     <label>Token SMS API</label>
                 </field>
-                <field id="statusComplete" translate="label" type="select" sortOrder="22" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="statusComplete" translate="label" type="select" sortOrder="22" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
                     <label>Enable for COMPLETE status</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="statusCompleteText" translate="label" type="textarea" sortOrder="23" showInDefault="1" showInStore="0" showInWebsite="0">
+                <field id="statusCompleteText" translate="label" type="textarea" sortOrder="23" showInDefault="1"
+                       showInStore="0" showInWebsite="0">
                     <label>Text for COMPLETE status</label>
                 </field>
-                <field id="statusNew" translate="label" type="select" sortOrder="33" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="statusNew" translate="label" type="select" sortOrder="33" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
                     <label>Enable for NEW status</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="statusNewText" translate="label" type="textarea" sortOrder="34" showInDefault="1" showInStore="0" showInWebsite="0">
+                <field id="statusNewText" translate="label" type="textarea" sortOrder="34" showInDefault="1"
+                       showInStore="0" showInWebsite="0">
                     <label>Text for NEW status</label>
                 </field>
-                <field id="statusHolded" translate="label" type="select" sortOrder="44" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="statusHolded" translate="label" type="select" sortOrder="44" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
                     <label>Enable for HOLDED status</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="statusHoldedText" translate="label" type="textarea" sortOrder="45" showInDefault="1" showInStore="0" showInWebsite="0">
+                <field id="statusHoldedText" translate="label" type="textarea" sortOrder="45" showInDefault="1"
+                       showInStore="0" showInWebsite="0">
                     <label>Text for HOLDED status</label>
                 </field>
-                <field id="statusCanceled" translate="label" type="select" sortOrder="55" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="statusCanceled" translate="label" type="select" sortOrder="55" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
                     <label>Enable for CANCELED status</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="statusCanceledText" translate="label" type="textarea" sortOrder="56" showInDefault="1" showInStore="0" showInWebsite="0">
+                <field id="statusCanceledText" translate="label" type="textarea" sortOrder="56" showInDefault="1"
+                       showInStore="0" showInWebsite="0">
                     <label>Text for CANCELED status</label>
                 </field>
             </group>

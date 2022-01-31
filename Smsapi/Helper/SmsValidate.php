@@ -31,8 +31,10 @@ class SmsValidate
     public function validate($phoneNumber)
     {
         if (false === $this->_validatePhoneNumber($phoneNumber)) {
+
             return false;
         }
+
         return true;
     }
 
@@ -45,13 +47,16 @@ class SmsValidate
         $phoneNumber = trim($phoneNumber);
 
         if (strlen($phoneNumber) === 9) {
+
             return $phoneNumber;
         }
         if (substr($phoneNumber, 0, 1) === '+'
             && substr($phoneNumber, 0, 3) === '+48'
             && strlen(substr($phoneNumber, 3)) === 9) {
+
             return substr($phoneNumber, 3);
         }
+
         return false;
     }
 }

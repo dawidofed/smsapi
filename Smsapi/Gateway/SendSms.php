@@ -38,9 +38,11 @@ class SendSms
             $service = (new SmsapiHttpClient())->smsapiComService($apiToken);
             $send = $service->smsFeature()->sendSms($sms);
             $writeLog->write('Status: ' . $send->status, $writeLog::INFO);
+
             return true;
         } catch (SmsapiClientException $smsapiClientException) {
             $writeLog->write('ERROR in createAndSendSms: ' . $smsapiClientException, $writeLog::ERROR);
+
             return false;
         }
     }
