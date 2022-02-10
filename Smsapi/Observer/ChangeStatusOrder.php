@@ -1,23 +1,5 @@
 <?php
-/**
- * Studio IT
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the federowicz.net license that is
- * available through the world-wide-web at this URL:
- * http://www.federowicz.net/M2LICENSE.txt
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade this extension to newer
- * version in the future.
- *
- * @category    StudioIt
- * @package     StudioIt_Smsapi
- * @copyright   Copyright (c) Studio IT Dawid Federowicz (http://www.federowicz.net/)
- * @license     http://www.federowicz.net/M2LICENSE.txt
- */
+declare(strict_types=1);
 
 namespace Studioit\Smsapi\Observer;
 
@@ -29,20 +11,22 @@ use StudioIt\Smsapi\Gateway\SendSms;
 use StudioIt\Smsapi\Helper\Configs;
 use StudioIt\Smsapi\Helper\SmsValidate;
 use StudioIt\Smsapi\Logger\LogWrite;
+use Magento\Framework\Logger\Monolog;
 
 class ChangeStatusOrder extends AbstractDataAssignObserver
 {
 
-    protected $_scopeConfig;
-    protected $_order;
+    private $scopeConfig;
+    private $order;
+    private $logger;
 
-    /**
-     * ChangeStatusOrder constructor.
-     * @param ScopeConfigInterface $scopeConfig
-     */
-    public function __construct(ScopeConfigInterface $scopeConfig)
+    public function __construct(
+        ScopeConfigInterface $scopeConfig,
+        Monolog $logger
+    )
     {
-        $this->_scopeConfig = $scopeConfig;
+        $this->scopeConfig = $scopeConfig;
+        $this->logger = $logger;
     }
 
     /**
@@ -53,7 +37,7 @@ class ChangeStatusOrder extends AbstractDataAssignObserver
     {
         $logWrite = new LogWrite();
 
-        $logWrite->write('=== Start SMSAPI ===', $logWrite::INFO);
+        $this->logger->info('=== Start SMSAPI ===');
         $config = new Configs($this->_scopeConfig);
         if (false === $config->isEnabled()) {
             $logWrite->write('SMSAPI disabled.', $logWrite::INFO);
